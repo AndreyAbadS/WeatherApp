@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/sarchCityFragment">
+
+    <fragment
+        android:id="@+id/detailsWeatherFragment"
+        android:name="com.example.weatherapp.ui.bodyApp.detailsWeatherFragment"
+        android:label="detailsWeatherFragment" >
+        <argument
+            android:name="feels_like"
+            app:argType="integer" />
+        <argument
+            android:name="temp"
+            app:argType="integer" />
+        <argument
+            android:name="main"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="city"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument android:name="citycountry" />
+    </fragment>
+    <fragment
+        android:id="@+id/sarchCityFragment"
+        android:name="com.example.weatherapp.ui.bodyApp.sarchCityFragment"
+        android:label="sarchCityFragment" >
+        <action
+            android:id="@+id/action_sarchCityFragment_to_statusWeatherFragment"
+            app:destination="@id/statusWeatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statusWeatherFragment"
+        android:name="com.example.weatherapp.ui.bodyApp.statusWeatherFragment"
+        android:label="statusWeatherFragment" >
+        <action
+            android:id="@+id/action_statusWeatherFragment_to_detailsWeatherFragment"
+            app:destination="@id/detailsWeatherFragment" />
+        <argument
+            android:name="feels_like"
+            app:argType="integer" />
+        <argument
+            android:name="temp"
+            app:argType="integer" />
+        <argument
+            android:name="status"
+            app:argType="string" />
+        <argument
+            android:name="city"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument android:name="citycountry"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+    </fragment>
+</navigation>
